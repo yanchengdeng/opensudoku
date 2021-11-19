@@ -318,5 +318,9 @@
     <color name="blue_grey_700">#455a64</color>
     <color name="blue_grey_800">#37474f</color>
     <color name="blue_grey_900">#263238</color>
+    <color name="color_88CC00">#88CC00</color>
+    <color name="color_ffffff">#FFFFFF</color>
+    <color name="color_66FFFF">#66FFFF</color>
+    <color name="color_436500">#436500</color>
 
 </resources>

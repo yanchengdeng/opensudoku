@@ -103,7 +103,7 @@
             android:layout_marginBottom="6dp"
             android:autoLink="all"
             android:gravity="center_horizontal"
-            android:text="@string/old_developers" />
+            android:text="old_developers" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -122,7 +122,7 @@
             android:layout_marginBottom="6dp"
             android:autoLink="all"
             android:gravity="center_horizontal"
-            android:text="@string/localization_contributors" />
+            android:text="localization_contributors" />
 
     </LinearLayout>
 

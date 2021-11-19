@@ -335,7 +335,7 @@ public class SudokuEditActivity extends ThemedActivity {
         String serializedCells = cells.serialize(CellCollection.DATA_VERSION_PLAIN);
         ClipData clipData = ClipData.newPlainText("Sudoku Puzzle", serializedCells);
         mClipboard.setPrimaryClip(clipData);
-        Toast.makeText(getApplicationContext(), R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "已复制", Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -353,12 +353,12 @@ public class SudokuEditActivity extends ThemedActivity {
                     CellCollection cells = CellCollection.deserialize(clipDataText);
                     mGame.setCells(cells);
                     ((SudokuBoardView) mRootLayout.getChildAt(0)).setCells(cells);
-                    Toast.makeText(getApplicationContext(), R.string.pasted_from_clipboard, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "已复制", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), R.string.invalid_puzzle_format, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "格式异常", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(getApplicationContext(), R.string.invalid_mime_type, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "类型异常", Toast.LENGTH_LONG).show();
             }
         }
     }

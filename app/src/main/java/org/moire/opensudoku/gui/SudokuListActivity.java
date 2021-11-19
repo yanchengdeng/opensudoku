@@ -220,7 +220,7 @@ public class SudokuListActivity extends ThemedActivity {
                 .setIcon(R.drawable.ic_view);
         menu.add(0, MENU_ITEM_SORT, 2, R.string.sort).setShortcut('2', 'o')
                 .setIcon(R.drawable.ic_sort);
-        menu.add(0, MENU_ITEM_RESET_ALL, 3, R.string.reset_all_puzzles).setShortcut('3','r')
+        menu.add(0, MENU_ITEM_RESET_ALL, 3, "全部重置").setShortcut('3','r')
                 .setIcon(R.drawable.ic_undo);
         menu.add(0, MENU_ITEM_SETTINGS, 4, R.string.settings).setShortcut('4', 's')
                 .setIcon(R.drawable.ic_settings);
@@ -335,7 +335,7 @@ public class SudokuListActivity extends ThemedActivity {
                                 R.array.game_sort,
                                 mListSorter.getSortType(),
                                 (dialog, whichButton) -> mListSorter.setSortType(whichButton))
-                        .setPositiveButton(R.string.sort_order_ascending, (dialog, whichButton) -> {
+                        .setPositiveButton("ASC", (dialog, whichButton) -> {
                             mListSorter.setAscending(true);
                             settings.edit()
                                     .putInt(SORT_TYPE, mListSorter.getSortType())
@@ -343,7 +343,7 @@ public class SudokuListActivity extends ThemedActivity {
                                     .apply();
                             updateList();
                         })
-                        .setNegativeButton(R.string.sort_order_descending, (dialog, whichButton) -> {
+                        .setNegativeButton("DES", (dialog, whichButton) -> {
                             mListSorter.setAscending(false);
                             settings.edit()
                                     .putInt(SORT_TYPE, mListSorter.getSortType())
@@ -357,7 +357,7 @@ public class SudokuListActivity extends ThemedActivity {
             case DIALOG_RESET_ALL:
                 return new AlertDialog.Builder(this)
                         .setIcon(R.drawable.ic_restore)
-                        .setTitle(R.string.reset_all_puzzles_confirm)
+                        .setTitle("确定要重置吗？")
                         .setPositiveButton(android.R.string.yes, (dialog, whichButton) -> {
                             List<SudokuGame> sudokuGames = mDatabase.getAllSudokuByFolder(mFolderID, mListSorter);
                             for (SudokuGame sudokuGame: sudokuGames) {
